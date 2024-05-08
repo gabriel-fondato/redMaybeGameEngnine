@@ -18,7 +18,7 @@ include $(DEVKITPPC)/gamecube_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	src
+SOURCES		:=	src src/rmge src/rmge/ngc
 DATA		:=
 TEXTURES	:=	textures 
 INCLUDES	:=

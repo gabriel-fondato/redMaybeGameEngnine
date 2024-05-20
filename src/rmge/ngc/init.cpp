@@ -1,46 +1,41 @@
 #include "init.h"
-#define DEFAULT_FIFO_SIZE (256*1024)
 
-GXRModeObj	*screenMode;
-static void	*frameBuffer;
 
 bool NGC::init() {
+float a = 0;
+    const u32 col[3] = {0xFFFFFFFF, 0xAAAAAAFF, 0x666666FF};
+    int cubeZ = 0;
 
-    VIDEO_Init();
-	
-	screenMode = VIDEO_GetPreferredMode(NULL);
-
-	PAD_Init();
-	frameBuffer	= MEM_K0_TO_K1(SYS_AllocateFramebuffer(screenMode));
-
-	VIDEO_Configure(screenMode);
-	VIDEO_SetNextFramebuffer(frameBuffer);
-	VIDEO_SetBlack(FALSE);
-	VIDEO_Flush();
+    GRRLIB_Init();
+    PAD_Init();
 
 
-    void *gp_fifo = NULL;                     //
-    gp_fifo = memalign(32,DEFAULT_FIFO_SIZE); //    initialize the fifo wich is like a thing that makes the cpu comunicate with the gp
-    memset(gp_fifo,0,DEFAULT_FIFO_SIZE);      //
 
-    GX_Init(gp_fifo,DEFAULT_FIFO_SIZE);       //    tell libogc to initialize the gp comunication with my fifo
+    GRRLIB_Settings.antialias = true;
 
-    GXColor background = {0,0,0,0xff};        //    set the background color so it does not create that hall of mirrors effect
-    GX_SetCopyClear(background, 0x00ffffff);  //
+    GRRLIB_SetBackgroundColour(0x00, 0x00, 0x00, 0xFF);
+    GRRLIB_Camera3dSettings(0.0f,0.0f,13.0f, 0,1,0, 0,0,0);
 
-    GX_InvVtxCache();                         //    invalidate and clear the vertex descriptor
-    GX_ClearVtxDesc();                        //
+    while(1) {
+        GRRLIB_2dMode();
+        PAD_ScanPads();
+        if(PAD_ButtonsDown(0) & PAD_BUTTON_START) exit(0);
+        if(PAD_ButtonsHeld(0) & PAD_BUTTON_A) cubeZ++;
+        if(PAD_ButtonsHeld(0) & PAD_BUTTON_B) cubeZ--;
 
-    GX_SetVtxDesc(GX_VA_POS, GX_DIRECT);      //
-    GX_SetVtxDesc(GX_VA_NRM, GX_DIRECT);      //    tell the gp how i will describe the vertexes
-    GX_SetVtxDesc(GX_VA_TEX0, GX_DIRECT);     //
+        GRRLIB_3dMode(0.1,1000,45,0,0);
+        GRRLIB_ObjectView(0,0,cubeZ, a,a*2,a*3,1,1,1);
+        GX_Begin(GX_QUADS, GX_VTXFMT0, 24);
+            GRRLIB_DrawCube(100,false,col[1]);
+        GX_End();
+        a+=0.5f;
 
-    GX_SetVtxAttrFmt(GX_VTXFMT0, GX_VA_POS, GX_POS_XYZ, GX_F32, 0); //
-    GX_SetVtxAttrFmt(GX_VTXFMT0, GX_VA_NRM, GX_NRM_XYZ, GX_F32, 0); //  tell the gp how i will describe the triangles
-    GX_SetVtxAttrFmt(GX_VTXFMT0, GX_VA_TEX0, GX_TEX_ST, GX_F32, 0); //
-    while(1){
-    GX_Begin(GX_TRIANGLES,GX_VTXFMT0,3);
-        //GX_Position3f32(1.0f,0,0);
-    GX_End();
+        
+
+        GRRLIB_Render();
     }
+
+    GRRLIB_Exit(); // Be a good boy, clear the memory allocated by GRRLIB
+
+    exit(0);
 }

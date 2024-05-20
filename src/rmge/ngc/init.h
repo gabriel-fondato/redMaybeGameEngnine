@@ -1,9 +1,10 @@
 #pragma once
-#include <gccore.h>
+#include <grrlib.h>
+
 #include <stdlib.h>
-#include <string.h>
-#include <malloc.h>
 #include <math.h>
+#include <malloc.h>
+#include <ogc/pad.h>
 
 
 class NGC {

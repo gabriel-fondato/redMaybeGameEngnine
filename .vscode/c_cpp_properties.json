@@ -4,6 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
+                "${workspaceFolder}/../**",
                 "/opt/devkitpro/libogc/**"
             ],
             "defines": [],

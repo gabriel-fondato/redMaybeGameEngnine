@@ -4,6 +4,7 @@
 
 #include "engine.h"
 #include "ngc/init.h"
+#include "wii/init.h"
 
 
 bool RMGE::init() {
@@ -14,8 +15,8 @@ bool RMGE::init() {
         #define PLATFORM_GAMECUBE
     #elif defined(__wii__)
         
-        NGC ngc; //same thing
-        ngc.init();
+        WII wii; //same thing
+        wii.init();
         #define PLATAFORM_WII
     #endif
 }

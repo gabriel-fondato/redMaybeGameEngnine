@@ -1,6 +1,6 @@
 init.o: \
- /home/red/Desktop/programinStuff/homebrewDev/redMaybeGameEngnine/platform/wii/../../src/rmge/ngc/init.cpp \
- /home/red/Desktop/programinStuff/homebrewDev/redMaybeGameEngnine/platform/wii/../../src/rmge/ngc/init.h \
+ /home/red/Desktop/programinStuff/homebrewDev/redMaybeGameEngnine/platform/wii/../../src/rmge/wii/init.cpp \
+ /home/red/Desktop/programinStuff/homebrewDev/redMaybeGameEngnine/platform/wii/../../src/rmge/wii/init.h \
  /opt/devkitpro/portlibs/wii/include/grrlib.h \
  /opt/devkitpro/libogc/include/gccore.h \
  /opt/devkitpro/libogc/include/ogc/dsp.h \
@@ -67,7 +67,7 @@ init.o: \
  /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_pixel.h \
  /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_settings.h \
  /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_texSetup.h
-/home/red/Desktop/programinStuff/homebrewDev/redMaybeGameEngnine/platform/wii/../../src/rmge/ngc/init.h:
+/home/red/Desktop/programinStuff/homebrewDev/redMaybeGameEngnine/platform/wii/../../src/rmge/wii/init.h:
 /opt/devkitpro/portlibs/wii/include/grrlib.h:
 /opt/devkitpro/libogc/include/gccore.h:
 /opt/devkitpro/libogc/include/ogc/dsp.h:

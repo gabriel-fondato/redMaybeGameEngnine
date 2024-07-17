@@ -1,9 +1,9 @@
 #include "init.h"
-
+#include <grrlib.h>
 
 bool NGC::init() {
 float a = 0;
-    const u32 col[3] = {0xFFFFFFFF, 0xAAAAAAFF, 0x666666FF};
+    const u32 col[3] = {0xFFFFFFFF, 0xAAAAAAFF, 0xFF6666FF};
     int cubeZ = 0;
 
     GRRLIB_Init();
@@ -24,9 +24,62 @@ float a = 0;
         if(PAD_ButtonsHeld(0) & PAD_BUTTON_B) cubeZ--;
 
         GRRLIB_3dMode(0.1,1000,45,0,0);
-        GRRLIB_ObjectView(0,0,cubeZ, a,a*2,a*3,1,1,1);
+        GRRLIB_ObjectView(0,0,5, a,a*2,a*3,1,1,1);
         GX_Begin(GX_QUADS, GX_VTXFMT0, 24);
-            GRRLIB_DrawCube(100,false,col[1]);
+            GX_Position3f32(-1.0f,1.0f,-1.0f);
+            GX_Color1u32(col[0]);
+            GX_Position3f32(-1.0f,-1.0f,-1.0f);
+            GX_Color1u32(col[0]);
+            GX_Position3f32(1.0f,-1.0f,-1.0f);
+            GX_Color1u32(col[0]);
+            GX_Position3f32(1.0f,1.0f,-1.0f);
+            GX_Color1u32(col[0]);
+
+            GX_Position3f32(-1.0f,1.0f,1.0f);
+            GX_Color1u32(col[0]);
+            GX_Position3f32(-1.0f,-1.0f,1.0f);
+            GX_Color1u32(col[0]);
+            GX_Position3f32(1.0f,-1.0f,1.0f);
+            GX_Color1u32(col[0]);
+            GX_Position3f32(1.0f,1.0f,1.0f);
+            GX_Color1u32(col[0]);
+
+            GX_Position3f32(-1.0f,1.0f,1.0f);
+            GX_Color1u32(col[1]);
+            GX_Position3f32(1.0f,1.0f,1.0f);
+            GX_Color1u32(col[2]);
+            GX_Position3f32(1.0f,1.0f,-1.0f);
+            GX_Color1u32(col[1]);
+            GX_Position3f32(-1.0f,1.0f,-1.0f);
+            GX_Color1u32(col[1]);
+
+            GX_Position3f32(-1.0f,-1.0f,1.0f);
+            GX_Color1u32(col[1]);
+            GX_Position3f32(1.0f,-1.0f,1.0f);
+            GX_Color1u32(col[1]);
+            GX_Position3f32(1.0f,-1.0f,-1.0f);
+            GX_Color1u32(col[1]);
+            GX_Position3f32(-1.0f,-1.0f,-1.0f);
+            GX_Color1u32(col[1]);
+
+            GX_Position3f32(-1.0f,1.0f,1.0f);
+            GX_Color1u32(col[2]);
+            GX_Position3f32(-1.0f,1.0f,-1.0f);
+            GX_Color1u32(col[2]);
+            GX_Position3f32(-1.0f,-1.0f,-1.0f);
+            GX_Color1u32(col[2]);
+            GX_Position3f32(-1.0f,-1.0f,1.0f);
+            GX_Color1u32(col[2]);
+
+            GX_Position3f32(1.0f,1.0f,1.0f);
+            GX_Color1u32(col[2]);
+            GX_Position3f32(1.0f,1.0f,-1.0f);
+            GX_Color1u32(col[2]);
+            GX_Position3f32(1.0f,-1.0f,-1.0f);
+            GX_Color1u32(col[2]);
+            GX_Position3f32(1.0f,-1.0f,1.0f);
+            GX_Color1u32(col[2]);
+            
         GX_End();
         a+=0.5f;
 
@@ -38,4 +91,5 @@ float a = 0;
     GRRLIB_Exit(); // Be a good boy, clear the memory allocated by GRRLIB
 
     exit(0);
+    return 1;
 }

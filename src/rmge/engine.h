@@ -4,5 +4,7 @@
 
 class RMGE {
     public:
-        bool init();
+        void init();
+        void InputScan();
+        void Render();
 };

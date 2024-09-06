@@ -1,10 +1,11 @@
 init.o: \
  /home/red/Desktop/programinStuff/homebrewDev/redMaybeGameEngnine/platform/gamecube/../../src/rmge/ngc/init.cpp \
  /home/red/Desktop/programinStuff/homebrewDev/redMaybeGameEngnine/platform/gamecube/../../src/rmge/ngc/init.h \
+ /opt/devkitpro/libogc/include/ogc/pad.h \
+ /opt/devkitpro/libogc/include/gctypes.h \
  /opt/devkitpro/portlibs/gamecube/include/grrlib.h \
  /opt/devkitpro/libogc/include/gccore.h \
  /opt/devkitpro/libogc/include/ogc/dsp.h \
- /opt/devkitpro/libogc/include/gctypes.h \
  /opt/devkitpro/libogc/include/ogc/aram.h \
  /opt/devkitpro/libogc/include/gcbool.h \
  /opt/devkitpro/libogc/include/ogc/arqueue.h \
@@ -55,10 +56,11 @@ init.o: \
  /opt/devkitpro/portlibs/gamecube/include/grrlib/GRRLIB_settings.h \
  /opt/devkitpro/portlibs/gamecube/include/grrlib/GRRLIB_texSetup.h
 /home/red/Desktop/programinStuff/homebrewDev/redMaybeGameEngnine/platform/gamecube/../../src/rmge/ngc/init.h:
+/opt/devkitpro/libogc/include/ogc/pad.h:
+/opt/devkitpro/libogc/include/gctypes.h:
 /opt/devkitpro/portlibs/gamecube/include/grrlib.h:
 /opt/devkitpro/libogc/include/gccore.h:
 /opt/devkitpro/libogc/include/ogc/dsp.h:
-/opt/devkitpro/libogc/include/gctypes.h:
 /opt/devkitpro/libogc/include/ogc/aram.h:
 /opt/devkitpro/libogc/include/gcbool.h:
 /opt/devkitpro/libogc/include/ogc/arqueue.h:

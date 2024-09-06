@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/../**",
-                "/opt/devkitpro/libogc/**"
+                "/opt/devkitpro/libogc/**",
+                "/home/red/Desktop/programinStuff/homebrewDev/GRRLIB/GRRLIB/GRRLIB"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

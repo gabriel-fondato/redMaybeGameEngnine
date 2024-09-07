@@ -33,11 +33,11 @@ int main(int argc, char **argv) {
 
     while (1) {
     
-        rmge.InputScan();
-        const u32 paddown = PAD_ButtonsDown(0);
+        u32 paddown = rmge.InputScan();
+        
 
         GRRLIB_FillScreen(GRRLIB_WHITE);
-        GRRLIB_Rectangle(x,50,200,200,GRRLIB_RED,TRUE);
+        GRRLIB_Rectangle(x,0,200,200,GRRLIB_RED,TRUE);
         x++;
         if (paddown & PAD_BUTTON_START) break;
     

@@ -14,8 +14,14 @@
         ngc.init(); //tell the ngc object to init 
         #define PLATFORM_GAMECUBE
     }
-    void RMGE::InputScan() {PAD_ScanPads();}
+    u32 RMGE::InputScan() {
+        PAD_ScanPads();
+        u32 paddown = PAD_ButtonsDown(0);
+
+        return paddown;
+    }
     void RMGE::Render() {GRRLIB_Render();}
+    RMGE::RMGE() {}
 #elif defined(__wii__)
     void RMGE::init() {
         WII wii; //same thing

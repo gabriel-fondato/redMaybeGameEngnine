@@ -36,6 +36,21 @@
         wii.init();
         #define PLATAFORM_WII
     }
+    u32 RMGE::InputScan(int pad) {                  //i belive the pad int is the controller port
+                                                    //this fuction scans inputs and updates them and converts the analogsticks fuctions to vectors :)
+        WPAD_ScanPads();
+        u32 paddown = WPAD_ButtonsDown(pad);
+
+        RMGE::leftStick.x = (pad);
+        RMGE::leftStick.y = PAD_StickY(pad);
+
+        RMGE::rightStick.x = PAD_SubStickX(pad);
+        RMGE::rightStick.y = PAD_SubStickY(pad);
+
+        return paddown;                             //i dont know what paddown actually is but we can know if there is a button pressed with it
+    }
+    void RMGE::Render() {GRRLIB_Render();}          //renders
+    RMGE::RMGE() {}
 #endif
 
 

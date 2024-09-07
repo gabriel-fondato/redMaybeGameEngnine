@@ -66,7 +66,11 @@ init.o: \
  /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_handle.h \
  /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_pixel.h \
  /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_settings.h \
- /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_texSetup.h
+ /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_texSetup.h \
+ /opt/devkitpro/libogc/include/wiiuse/wpad.h \
+ /opt/devkitpro/libogc/include/wiiuse/wiiuse.h \
+ /opt/devkitpro/libogc/include/bte/bte.h \
+ /opt/devkitpro/libogc/include/bte/bd_addr.h
 /home/red/Desktop/programinStuff/homebrewDev/redMaybeGameEngnine/platform/wii/../../src/rmge/wii/init.h:
 /opt/devkitpro/portlibs/wii/include/grrlib.h:
 /opt/devkitpro/libogc/include/gccore.h:
@@ -134,3 +138,7 @@ init.o: \
 /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_pixel.h:
 /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_settings.h:
 /opt/devkitpro/portlibs/wii/include/grrlib/GRRLIB_texSetup.h:
+/opt/devkitpro/libogc/include/wiiuse/wpad.h:
+/opt/devkitpro/libogc/include/wiiuse/wiiuse.h:
+/opt/devkitpro/libogc/include/bte/bte.h:
+/opt/devkitpro/libogc/include/bte/bd_addr.h:

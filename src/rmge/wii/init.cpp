@@ -2,8 +2,10 @@
 #include <grrlib.h>
 #include <wiiuse/wpad.h>
 
-bool WII::init() {
+int WII::init() {
 
     GRRLIB_Init();
     WPAD_Init();
+    
+    return 0;
 }

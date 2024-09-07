@@ -11,7 +11,7 @@ typedef uint32_t u32;
 class RMGE {
     public:
         void init();
-        u32 InputScan();
+        u32 InputScan(int pad);
         void Render();
 
     typedef struct Vector2 {
@@ -20,6 +20,7 @@ class RMGE {
     } Vector2;
 
     Vector2 leftStick;
+    Vector2 rightStick;
 
     RMGE();
 

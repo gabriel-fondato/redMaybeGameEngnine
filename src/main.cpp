@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
 
     while (1) {
     
-        u32 paddown = rmge.InputScan();
+        u32 paddown = rmge.InputScan(0);
         
 
         GRRLIB_FillScreen(GRRLIB_WHITE);
